@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Dashboard</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://jsdelivr.net"></script>
 </head>
     
 <body>
@@ -16,10 +16,12 @@
         <span class="logo-text">EduAdmin</span>
     </div>
     <nav class="sidebar-nav">
-        <a href="/" class="nav-link active">
+        <!-- FIXED: Added th:href to ensure proper routing -->
+        <a th:href="@{/}" class="nav-link active">
             <span class="nav-icon">📊</span> Dashboard
         </a>
-        <a href="/new" class="nav-link">
+        <!-- FIXED: Added th:href to ensure proper routing -->
+        <a th:href="@{/new}" class="nav-link">
             <span class="nav-icon">➕</span> Add Student
         </a>
     </nav>
@@ -31,7 +33,8 @@
     <!-- TOP BAR -->
     <div class="topbar">
         <h1 class="page-title">Dashboard</h1>
-        <a href="/new" class="btn btn-primary">+ Add Student</a>
+        <!-- FIXED: Added th:href to ensure proper routing -->
+        <a th:href="@{/new}" class="btn btn-primary">+ Add Student</a>
     </div>
 
     <!-- STAT CARDS -->
@@ -179,3 +182,4 @@
 
 </body>
 </html>
+
